@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2 JS - Acceso del Javascript al HTML y al CSS</title>
+</head>
+<body>
+    
+    <h1 id="titulo">Bienvenidos!</h1>
+    <p id="parrafo">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis mollitia consectetur quae placeat, adipisci dolorem maiores reprehenderit pariatur doloribus laborum quos quaerat repellat incidunt deserunt iste perferendis facere quod recusandae.
+    </p>
+    <span id="lista"></span>
+
+    <script>
+        console.log('Soy un script interno')
+
+        var refTitulo = document.getElementById('titulo')
+        console.log(refTitulo)
+        //refTitulo.innerText = 'Lo cambié'
+        refTitulo.innerHTML = '<i>Lo cambié</i>'
+        console.log(refTitulo.innerText)
+        console.log(refTitulo.innerHTML)
+        refTitulo.style.color = 'red'
+
+        var refParrafo = document.getElementById('parrafo')
+        refParrafo.style.color = 'magenta'
+        refParrafo.style.backgroundColor = '#000'
+        refParrafo.style.padding = '10px'
+        refParrafo.style.borderRadius = '10px'
+    </script>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

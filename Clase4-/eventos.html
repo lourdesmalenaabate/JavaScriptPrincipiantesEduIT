@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos en JS</title>
+</head>
+<body>
+    
+    <!-- --------------- -->
+    <!-- EVENTO DE CLICK -->
+    <!-- --------------- -->
+    <button onclick="alert('Botón apretado!')">Apretar!</button>
+    <br><br>
+
+    <button onclick="incrementar()">Incrementar</button>
+    <button onclick="reset()">reset</button>
+    <span></span>
+    <hr>
+
+    <!-- --------------- -->
+    <!-- EVENTO DE INPUT -->
+    <!-- --------------- -->
+    <input type="text"> <span></span> <br><br>
+    <input type="text" placeholder="ingrese una expresión matemática"> <span></span>
+    <hr>
+
+    <!-- --------------- -->
+    <!-- EVENTO DE MOUSE -->
+    <!-- --------------- -->
+    <p id="texto">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sed optio commodi repellendus fugiat minus rem perferendis expedita voluptates neque similique reiciendis in itaque distinctio, alias deserunt veritatis incidunt! Magnam.
+    </p>
+
+    <script>
+        /* ---------------------- */
+        /*       EVENTO MOUSE     */
+        /* ---------------------- */
+        document.querySelector('#texto').onmouseover = mouseOver
+        function mouseOver() {
+            console.log('El mouse está encima del elemento')
+            document.querySelector('#texto').style.backgroundColor = 'black'
+            document.querySelector('#texto').style.color = 'white'
+        }
+
+        document.querySelector('#texto').onmouseleave = mouseLeave
+        function mouseLeave() {
+            console.log('El mouse está fuera del elemento')
+            document.querySelector('#texto').style.backgroundColor = ''
+            document.querySelector('#texto').style.color = ''
+        }
+
+        /* ---------------------- */
+        /*     EVENTO INPUT 1     */
+        /* ---------------------- */
+        document.querySelector('input').oninput = espejar
+        function espejar() {
+            var texto = document.querySelector('input').value
+            
+            console.log(texto)
+            var textoEnArray = texto.split('')
+            console.log(textoEnArray)
+
+            textoEnArray.reverse()
+            console.log(textoEnArray)
+
+            var textoInvertido = textoEnArray.join('')
+            console.log(textoInvertido)
+
+            document.querySelectorAll('span')[1].innerText = textoInvertido
+        }
+
+
+        /* ---------------------- */
+        /*     EVENTO INPUT 2     */
+        /* ---------------------- */
+        document.querySelectorAll('input')[1].oninput = calcular
+        function calcular() {
+            var expresion = document.querySelectorAll('input')[1].value
+
+            //console.log(expresion)
+            try {
+                var resultado = expresion? eval(expresion) : ''
+                document.querySelectorAll('span')[2].innerText = resultado
+            }
+            catch(error) {
+                document.querySelectorAll('span')[2].innerText = 'Error de expresión'
+            }
+        }
+
+        /* ---------------------- */
+        /*       EVENTO CLICK     */
+        /* ---------------------- */
+        function representarContador(cont) {
+            document.querySelectorAll('span')[0].innerText = cont
+        }
+
+        var contador = 123
+        representarContador(contador)
+
+        function incrementar() {
+            contador++
+            representarContador(contador)
+        }
+
+        function reset() {
+            contador = 0
+            representarContador(contador)
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2 JS - Estructuras Condicionales</title>
+</head>
+
+<body>
+
+    <script>
+
+        /* ------------------------------------------ */
+        /*           Estructura if / else             */
+        /* ------------------------------------------ */
+        /* var respuesta = confirm('Desea ingresar?')
+        console.log(respuesta, typeof respuesta)
+        //alert('La respuesta es ' + respuesta)
+
+        if(respuesta) {
+            alert('Bienvenido!!!')
+        }
+        else {
+            alert('Lo esperamos la próxima vez!')
+        }
+
+        alert('Programa terminado') */
+
+        /* ------------------------------------------ */
+        /*       Estructura if / else  Anidada        */
+        /* ------------------------------------------ */
+        /* var edad = prompt('Ingrese su edad')
+        if (edad >= 18) {
+            alert('Ud es mayor de edad')
+            var respuesta = confirm('Desea ingresar?')
+            if (respuesta) {
+                alert('Bienvenido')
+                var nombre = prompt('Dígame su nombre')
+                if (nombre == 'Pedro') {
+                    alert('Hola Pedritoooo!!!')
+                }
+                else {
+                    alert('buenas noches ' + nombre)
+                    var respuesta = confirm('Necesita ir al baño?')
+                    if (respuesta) {
+                        var clave = prompt('Ingrese la clave...')
+                        if (clave == 1234) {
+                            alert('Puede entrar')
+                        }
+                        else {
+                            alert('Pida la clave en la caja')
+                        }
+                    }
+                }
+            }
+        }
+        else {
+            alert('Ud es menor de edad')
+        } */
+
+        /* -------------------------------------------- */
+        /*   Estructura if / else if / else (Anidada)   */
+        /* -------------------------------------------- */
+
+        // ---------------------------------------------------
+        //           Operadores de comparación
+        // ---------------------------------------------------
+        // a > b    : a es mayor que b? (true / false)
+        // a >= b   : a es mayor ó igual que b? (true / false)
+        // a < b    : a es menor que b? (true / false)
+        // a <= b   : a es menor ó igual que b? (true / false)
+        // a == b   : a es igual a b? (true / false)
+        // a != b   : a es distinto a b? (true / false)
+        // a === b  : a es idéntico a b? (true / false)
+        // ---------------------------------------------------
+
+        // -----------------------------------------------------
+        //                 Operadores lógicos
+        // -----------------------------------------------------
+        // && (Y - AND) : intersección de condiciones
+        //                      a       &&        b
+        //                    false     &&      false   --> false
+        //                    true      &&      false   --> false
+        //                    false     &&      true    --> false
+        //                    true      &&      true    --> true
+        // -----------------------------------------------------
+        // || (O - OR) : unión de condiciones
+        //                      a       ||        b
+        //                    false     ||      false   --> false
+        //                    true      ||      false   --> true
+        //                    false     ||      true    --> true
+        //                    true      ||      true    --> true
+        // -----------------------------------------------------
+        // ! (NO - NOT) : negación de la condicion
+        //                    !false --> true
+        //                    !true  --> false
+        // -----------------------------------------------------
+        /* var edad = parseInt(prompt('Ingrese su edad'))
+        console.log(edad)
+
+        if(edad >= 0 && edad < 4) {
+            alert('Ud es un bebé')
+        }
+        else if(edad >= 4 && edad < 12) {
+            alert('Ud es un niño')
+        }
+        else if(edad >= 12 && edad < 18) {
+            alert('Ud es un adolescente')
+        }
+        else if(edad >= 18 && edad < 35) {
+            alert('Ud es un joven')
+        }
+        else if(edad >= 35 && edad < 50) {
+            alert('Ud es un adulto joven')
+        }
+        else if(edad >= 50 && edad < 60) {
+            alert('Ud es un adulto')
+        }
+        else if(edad >= 60 && edad < 80) {
+            alert('Ud es un adulto mayor')
+        }
+        else if(edad >= 80 && edad < 120) {
+            alert('Ud es un anciano')
+        }
+        else {
+            alert('Ud no es humano')
+        } */
+
+        /* ----------------------------------------------------------- */
+        /*        Determinar si pertenezco a la categoría joven        */
+        /* ----------------------------------------------------------- */
+        /* var edad = parseInt(prompt('Ingrese su edad'))
+ */
+        /* 1er CASO ---> AND  */
+        /* if(edad >= 18 && edad < 35) console.log('Ud está en la categoría joven')
+        else console.log('Ud NO está en la categoría joven') */
+
+        /* 2do CASO ---> OR  */
+        /* if(edad < 18 || edad >= 35) console.log('Ud NO está en la categoría joven')
+        else console.log('Ud está en la categoría joven') */
+
+        /* 3er CASO ---> NOT - OR  */
+        /* if(!(edad < 18 || edad >= 35)) console.log('Ud está en la categoría joven')
+        else console.log('Ud NO está en la categoría joven') */
+
+
+        /* -------------------------------------------------------------------------------------- */
+        /*  Obtener el nombre del día de la semana utilizando la función getDay() del Objeto Date */
+        /* -------------------------------------------------------------------------------------- */
+        var fyh = new Date()
+        //console.log(fyh)
+
+        var numeroDia = fyh.getDay()
+        
+        /* ----------------------- */
+        /* Sólo para hacer pruebas */
+        /* ----------------------- */
+        //numeroDia = 7
+        /* ----------------------- */
+        
+        //console.log(numeroDia)
+
+        /* ----------------------- */
+        /* CON if / else if / else */
+        /* ----------------------- */
+        var nombreDia = ''
+        if(numeroDia == 0) nombreDia = 'domingo'
+        else if(numeroDia == 1) nombreDia = 'lunes'
+        else if(numeroDia == 2) nombreDia = 'martes'
+        else if(numeroDia == 3) nombreDia = 'miércoles'
+        else if(numeroDia == 4) nombreDia = 'jueves'
+        else if(numeroDia == 5) nombreDia = 'viernes'
+        else if(numeroDia == 6) nombreDia = 'sábado'
+        else nombreDia = 'DESCONOCIDO'
+
+        document.write('El número de dia es <b style="color:green;">' + numeroDia + '</b><br>')
+        document.write('Hoy es <b style="color:blue;">' + nombreDia + '</b> (if/else if /else)<br>')
+
+        /* ----------------------- */
+        /*       CON switch        */
+        /* ----------------------- */   
+        switch(numeroDia) {
+            //if(numeroDia === 0)
+            case 0:
+                nombreDia = 'domingo'
+                break
+            //else if(numeroDia === 1)
+            case 1:
+                nombreDia = 'lunes'
+                break
+            //else if(numeroDia === 2)
+            case 2:
+                nombreDia = 'martes'
+                break
+            //else if(numeroDia === 3)
+            case 3:
+                nombreDia = 'miércoles'
+                break
+            //else if(numeroDia === 4)
+            case 4:
+                nombreDia = 'jueves'
+                break
+            //else if(numeroDia === 5)
+            case 5:
+                nombreDia = 'viernes'
+                break
+            //else if(numeroDia === 6)
+            case 6:
+                nombreDia = 'sábado'
+                break
+            //else
+            default:
+                nombreDia = 'DESCONOCIDO'
+                //break (puede o no puede estar)
+        }
+        document.write('Hoy es <b style="color:crimson;">' + nombreDia + '</b> (switch)<br>')
+
+
+        /* ------------------------------------------------------------------------- */
+        /*                   Otro ejemplo de switch -> uso del break                 */
+        /*              Determinar si hoy es dia laboral ó fin de semana             */
+        /* ------------------------------------------------------------------------- */
+        var mensaje = ''
+        switch(numeroDia) {
+            //if(numeroDia === 0 || numeroDia === 6)
+            case 0:
+            case 6:
+                mensaje = 'FIN DE SEMANA'
+                break
+            //else if(numeroDia >= 1 && numeroDia <= 5)
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                mensaje = 'DÍA LABORAL'
+                break
+            //else
+            default:
+                mensaje = 'DIA DESCONOCIDO'
+                //break (puede o no puede estar)
+        }
+
+        document.write('Hoy es <b style="color: blueviolet;">' + mensaje + '</b><br>')
+
+        /* ------------------------------------------------------------------------- */
+        /*                   Mismo ejemplo con OPERADOR TERNARIO                     */
+        /*             condicion? casoCondicionTrue : casoCondicionFalse             */
+        /* ------------------------------------------------------------------------- */
+        //Ejemplo con edad (ternario simple)
+        var edad = 19
+        console.log( edad>=18? 'Soy mayor de edad' : 'Soy menor de edad' )
+
+        //Ejemplo con numeroDia (con if / else if /else)
+        if(numeroDia === 0 || numeroDia === 6) document.write('Es fin de semana')
+        else if(numeroDia >= 1 && numeroDia <= 5) document.write('Es día laboral')
+        else document.write('DIA DESCONOCIDO')
+
+        document.write('<br>')
+
+        //Ejemplo con ternario (anidado)
+        document.write(
+            (numeroDia === 0 || numeroDia === 6)? 'Es fin de semana' :
+            ( (numeroDia >= 1 && numeroDia <= 5)? 'Es día laboral' : 'DIA DESCONOCIDO' )
+        )
+
+    </script>
+
+
+</body>
+
+</html>

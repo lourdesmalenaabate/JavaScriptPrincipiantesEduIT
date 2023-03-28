@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3 JS - Ciclos de Repetición</title>
+</head>
+<body>
+    
+    <script>
+
+        /* -------------------------------------------------------- */
+        /*           Formas de incrementar una variable             */
+        /* -------------------------------------------------------- */
+        console.log('/* Forma normal */')
+        var n = 9
+        n = n + 1
+        /* Otras operaciones normales
+        n = n - 1
+        n = n * 1
+        n = n / 1
+        n = n % 1
+        */
+        console.log(n)
+
+        console.log('/* Forma reducida */')
+        n = 9
+        n += 1
+        /* Otras operaciones reducidas
+        n -= 1
+        n *= 1
+        n /= 1
+        n %= 1
+        */
+        console.log(n)
+
+        console.log('/* Forma post incremento */')
+        n = 9
+        var postInc = n++
+        /* Otras operaciones post
+        n--   //post decremento
+        */
+        console.log(postInc)
+        console.log(n)
+
+        console.log('/* Forma pre incremento */')
+        n = 9
+        var preInc = ++n
+        /* Otras operaciones pre
+        --n   //pre decremento
+        */
+        console.log(preInc)
+        console.log(n)
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Representar los números del 0 al 9 (con do while) */')
+
+        var numero = 0
+        do {
+            console.log(numero)
+            numero++
+        }
+        while(numero < 10)
+
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Representar los números del 0 al 9 (con while) */')
+
+        numero = 0
+        while(numero < 10) {
+            console.log(numero)
+            numero++
+        }
+        
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Representar los números del 0 al 9 (con for) */')
+        //     (1)       (2)(5)(8)    (4)(7)
+        for(numero = 0; numero < 10; numero++) {
+            console.log(numero) //(3)(6)
+        }
+        //(9)
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Representar los números del 9 al 0 (con for) */')
+        /* for(numero = 0; numero < 10; numero++) {
+            console.log(9-numero)
+        } */
+        for(numero = 9; numero >= 0; numero--) {
+            console.log(numero)
+        }
+
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Break y Continue en ciclos de repetición */')
+
+        for(numero = 0; numero < 10; numero++) {
+            if(numero == 3 || numero == 2) continue  //vale SOLO para el ciclo for
+            if(numero == 6) break // vale para ciclos do-while y while
+            console.log(numero)
+        }
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Ciclo for: Múltiples acciones en los campos */')
+        // for( inicializacion1,inicializacion2); condiciones; ejecución1,ejecución2 )
+        for(var i=0,j=9; i<10 && j>=5; i++,j--) {
+            console.log(i,j)
+        }
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Ciclo for anidados */')
+        for(var i=10; i<15; i++) {
+            for(var j=20; j<25; j++) {
+                for(var k=0; k<2; k++) {
+                    console.log('i:',i,'j:',j,'k:',k)
+                }
+            }
+        }
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Representar los números del 0 al 20 de 2 en 2 (con for) */')
+        for(var num=0; num<=20; num+=2) {
+            console.log(num)
+        }
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Representar los números impares entre el 10 y el 20 (con for) */')
+        for(num=10; num<=20; num++) {
+            //if(num%2 == 1) console.log(num)
+            if(num%2) console.log(num)
+        }
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Representar los números pares entre el 10 y el 20 (con for) */')
+        for(num=10; num<=20; num++) {
+            //if(num%2 == 0) console.log(num)
+            if(!(num%2)) console.log(num)  //----> múltiplos de 2
+        }
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Clasificar los números de 10 al 40 en pares e impares (con for) */')
+        console.log(' \n/* Además, indicar con un asterisco (*) los múltiplos de 3 */')
+        console.log(' \n/* y también, indicar con un asterisco (#) los múltiplos de 5 */')
+        console.log(' \n/* Siguiendo este formato: "15 IMPAR * #" "14 PAR" "21 IMPAR *" */')
+
+        for(var num=10; num<=40; num++) {
+            var resultado = 
+                num + ' ' +
+                ( !(num%2)? 'PAR':'IMPAR' ) + ' ' + 
+                ( !(num%3)? '*':'' ) + ' ' + 
+                ( !(num%5)? '#':'' )
+
+            console.log(resultado)
+        }
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Representar 10 números aleatorios entre el 1 y el 10 (con for) */')
+        for(var n=1; n<=10; n++) {
+            var aleatorio = Math.random()   // 0 ... 0.99999999999....
+            aleatorio *= 10                 // 0 ... 9.99999999999....
+            aleatorio = parseInt(aleatorio) // 0 ... 9
+            aleatorio++                     // 1 ... 10
+            console.log(aleatorio)
+        }
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Representar 10 números aleatorios entre el 1 y el 10 (con while) */')
+        var n = 1
+        while(n<=10) {
+            var aleatorio = Math.random()   // 0 ... 0.99999999999....
+            aleatorio *= 10                 // 0 ... 9.99999999999....
+            aleatorio = parseInt(aleatorio) // 0 ... 9
+            aleatorio++                     // 1 ... 10
+            console.log(aleatorio)
+            n++
+        }
+
+
+        /* -------------------------------------------------------------------- */
+        console.log(' \n/* Calcular el promedio de notas de alumnos (con do while) */')
+
+        do {
+            var suma = 0
+            var cantidad = 0
+            var notas = ''
+            var nombre = prompt('Ingrese el nombre del alumno')
+            do {
+                var nota = prompt('Ingrese la nota del alumno '+nombre+', para terminar marque f')
+                if(nota == 'f') break
+
+                if(nota >= 0 && nota <= 10 && nota!='' && nota!=null) {
+                    suma += parseFloat(nota)
+                    notas += (nota + ' ')
+                    cantidad++
+                }
+                else {
+                    alert('La nota ' + nota + ' no es válida')
+                }
+            }
+            while(true)
+
+            if(cantidad) {
+                var promedio = suma / cantidad
+
+                console.log(
+                    '-------------------------------------------------------\n' + 
+                    ' La cantidad de notas ingresadas es ' + cantidad + '\n' + 
+                    ' Detalle de las notas: ' + notas + '\n' +
+                    ' El promedio de las notas del alumno es ' + promedio + '\n' +
+                    ' El alumno ' + nombre + ' ' + ( promedio>=4? 'APROBÓ':'NO APROBÓ') + '\n' +
+                    '-------------------------------------------------------\n\n'
+                )
+            }
+            else {
+                alert('No hay notas ingresadas')
+            }
+        }
+        while(confirm('Desea calcular otro promedio?'))
+
+    </script>
+
+</body>
+</html>

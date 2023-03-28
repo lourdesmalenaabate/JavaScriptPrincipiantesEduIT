@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 1 JS desde 0</title>
+    <style>
+        h1 {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bienvenidos al curso de Javascript</h1>
+
+    <script>
+        console.log('Bienvenidos al curso de Javascript')   //envío un mensaje a la consola
+        
+        console.log('Hola')
+        //console.log('Mundo') //comentario de línea
+
+        /* comentario de bloque */
+        /*
+        console.log('como')
+        console.log('están!')
+        */
+
+        /* ----------------------------------------------------
+               Declaro una variable y le asigno un valor
+        ---------------------------------------------------- */               
+        var miMensaje = 'Hola soy un programa en JS'
+        console.log(miMensaje)
+        document.write(miMensaje)
+        document.write('<p style="color:purple;">'+miMensaje+'</p>')
+        //alert(miMensaje)
+
+        /* ----------------------------------------------------
+                      Tipos de variables en JS
+        ---------------------------------------------------- */               
+        //variable del tipo number
+        var miNumero = -123.45
+        console.log(miNumero, typeof miNumero) 
+
+        //variable del tipo boolean
+        var miBooleana = true //false
+        console.log(miBooleana, typeof miBooleana)
+
+        //variable del tipo string
+        var miString = 'Hola!'
+        console.log(miString, typeof miString)
+
+        //variable del tipo array
+        //variable del tipo object
+
+        /* ----------------------------------------------------
+                    Operaciones aritméticas en JS
+        ---------------------------------------------------- */        
+        var numero = (3 + 4) * 5
+        console.log(numero)       
+
+        var numero2 = 5
+        numero = 45 + numero2
+        console.log(numero)
+
+        /* Concatenación */
+        var miMensaje1 = 'Hola'
+        var miMensaje2 = 'Mundo'
+        var miMensajeTotal = miMensaje1 + ' ' + miMensaje2 + ' ' + (456 + 4)
+        console.log(miMensajeTotal)
+
+        /* ----------------------------------------------------
+                        Ingreso de datos en JS
+        ---------------------------------------------------- */        
+        /* var numero1 = prompt('Ingrese un número')
+        console.log(numero1, typeof numero1)
+        //numero1 = parseInt(numero1)
+        numero1 = parseFloat(numero1)
+        console.log(numero1, typeof numero1)
+
+        var numero2 = prompt('Ingrese otro número')
+        console.log(numero2, typeof numero2)
+        //numero2 = parseInt(numero2)
+        numero2 = parseFloat(numero2)
+        console.log(numero2, typeof numero2)
+
+        var suma = numero1 + numero2
+        alert('La suma de ' + numero1 + ' más ' + numero2 + ' es ' + suma.toFixed(2)) */
+
+
+        /* ----------------------------------------------------
+                            Tipado en JS
+        ---------------------------------------------------- */        
+        var nombreDeUnaPersona = 'Pedro'
+        console.log(nombreDeUnaPersona, typeof nombreDeUnaPersona)
+        nombreDeUnaPersona = 123
+        console.log(nombreDeUnaPersona, typeof nombreDeUnaPersona)
+
+
+        /* --------------------------------------------------------------------
+            Operaciones en JS : suma, resta, multiplicación, división y módulo
+        -------------------------------------------------------------------- */        
+        document.write('<br>')
+        
+        /* var op1 = parseFloat(prompt('Ingrese un número'))
+        var op2 = parseFloat(prompt('Ingrese otro número')) */
+        var op1 = Number(prompt('Ingrese un número'))
+        var op2 = Number(prompt('Ingrese otro número'))
+
+        var suma = op1 + op2
+        document.write('<br><b>La suma de ' + op1 + ' más ' + op2 + ' es ' + suma)
+        
+        var resta = op1 - op2
+        document.write('<br><b>La resta de ' + op1 + ' menos ' + op2 + ' es ' + resta)
+        
+        var mult = op1 * op2
+        document.write('<br><b>La multiplicación de ' + op1 + ' por ' + op2 + ' es ' + mult)
+
+        var div = op1 / op2
+        document.write('<br><b>La división de ' + op1 + ' dividido ' + op2 + ' es ' + div)
+
+        var mod = op1 % op2
+        document.write('<br><b>El módulo de ' + op1 + ' módulo ' + op2 + ' es ' + mod)
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones en JS</title>
+</head>
+<body>
+    
+    <script>
+
+        /* --------------------------------------------------------------------------------- */
+       
+        console.log('\n/* ---------------------------------------------------------------- */')
+        console.log(  '/*        Función que recibe un parámetro y no retorna datos        */')
+        console.log(  '/* ---------------------------------------------------------------- */')
+
+        function mostrarValoresArray(array) {
+            console.log(array)
+            /* for(var elemento of array) {
+                console.log(elemento)
+            } */
+            for(var i=0; i<array.length; i++) {
+                console.log('El elemento de índice ' + i + ' contiene este valor ' + array[i])
+            }
+            /* array.forEach(function(elemento,i){
+                console.log('El elemento de índice ' + i + ' contiene el valor ' + elemento)
+            }) */
+        }
+
+        var array1 = [23,56,78,55,72,90]
+        mostrarValoresArray(array1)
+
+        var array2 = [true,44,'Juan',[1,2,3]]
+        mostrarValoresArray(array2)
+
+        var diasSemana = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado']
+        mostrarValoresArray(diasSemana)
+
+        /* --------------------------------------------------------------------------------- */
+
+        console.log('\n/* ---------------------------------------------------------------- */')
+        console.log(  '/*        Función que recibe parámetros y retorna un valor          */')
+        console.log(  '/* ---------------------------------------------------------------- */')
+
+        function sumar(a,b) {
+            return a + b
+        }
+
+        var op1 = 5,
+            op2 = 7
+
+        var resultado = sumar(op1,op2)
+        console.log('El operación suma entre ' + op1 + ' y ' + op2 + ' da como resultado ' + resultado)
+
+        resultado = sumar(6,sumar(1,2))
+        console.log(resultado)
+
+        /* --------------------------------------------------------------------------------- */
+
+        console.log('\n/* ---------------------------------------------------------------- */')
+        console.log(  '/*    Función que no recibe parámetros y no retorna un valor        */')
+        console.log(  '/* ---------------------------------------------------------------- */')
+
+        function saludar() {
+            console.log('Hola!')
+        }
+
+        saludar()
+        saludar()
+        saludar()
+
+        /* --------------------------------------------------------------------------------- */
+
+        console.log('\n/* ---------------------------------------------------------------- */')
+        console.log(  '/*      Función que no recibe parámetros y retorna un valor         */')
+        console.log(  '/* ---------------------------------------------------------------- */')
+
+        function obtenerAleatorios1al10() {
+            var random = Math.random()          // 0 ... 0.9999999999.....
+            random *= 10                        // 0 ... 9.9999999999.....
+            random = parseInt(random)           // 0 ... 9
+            /* random++                            // 1 ... 10
+            return random */
+            return ++random                     // 1 .. 10
+        }
+
+        for(var i=0; i<5; i++) {
+            console.log( obtenerAleatorios1al10() )
+        }
+
+    </script>
+
+</body>
+</html>

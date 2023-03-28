@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string / array methods</title>
+</head>
+<body>
+    
+    <script>
+        var persona = {
+            nombre: 'Juan', //propiedad
+            edad: 23,       //propiedad
+            saludar : function() {  //método
+                return 'Hola soy ' + this.nombre
+            }
+        }
+        console.log(persona)
+
+        console.log(
+            'La persona se llama ' + persona.nombre + ' y tiene ' + persona.edad + ' años. ' + 
+            'Saluda de la siguiente forma: ' + persona.saludar()
+        )
+
+        console.log('/* ------------------------------------------------------------- */')
+        console.log('/*                       string methods                          */')
+        console.log('/* ------------------------------------------------------------- */')
+        //https://www.w3schools.com/js/js_string_methods.asp
+        //https://www.w3schools.com/jsref/jsref_obj_string.asp
+
+        console.log('\n/* trim */')
+        var miStr = '            Hola              '
+        console.log(miStr, miStr.length)
+        var miStrSinEspacios = miStr.trim()
+        console.log(miStrSinEspacios, miStrSinEspacios.length)
+
+
+        console.log('/* ------------------------------------------------------------- */')
+        console.log('/*                       array methods                           */')
+        console.log('/* ------------------------------------------------------------- */')
+        //https://www.w3schools.com/js/js_array_methods.asp
+        //https://www.w3schools.com/jsref/jsref_obj_array.asp
+
+        console.log('\n/* push */')
+        var miArray = [1,2,3,4]
+        console.log(miArray)
+        miArray.push(5)
+        console.log(miArray)
+        miArray.push(6)
+        console.log(miArray)
+
+    </script>
+
+</body>
+</html>

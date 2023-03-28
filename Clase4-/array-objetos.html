@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array / Objetos en JS</title>
+</head>
+<body>
+    
+    <script>
+
+        /* ----------------------------------------------------
+                      Tipos de variables en JS
+        ---------------------------------------------------- */               
+        //variable del tipo number
+        console.log('\n/* variable del tipo number */')
+        var miNumero = -123.45
+        console.log(miNumero, typeof miNumero) 
+
+        //variable del tipo boolean
+        console.log('\n/* variable del tipo boolean */')
+        var miBooleana = true //false
+        console.log(miBooleana, typeof miBooleana)
+
+        //variable del tipo string
+        console.log('\n/* variable del tipo string */')
+        var miString = 'Hola!'
+        console.log(miString, typeof miString)
+
+
+        //variable del tipo array
+        console.log('\n/* variable del tipo array */')
+
+        var miArrayNumerico = [56,87,3,6,22,49,94,111] //array homogéneo
+        console.log(miArrayNumerico)
+
+        console.log('La cantidad de elementos del array es ' + miArrayNumerico.length)
+        console.log('El primer elemento es ' + miArrayNumerico[0])
+        console.log('El elemento de índice 4 es ' + miArrayNumerico[4])
+        var indiceUltimoElemento = miArrayNumerico.length - 1
+        console.log('El último elemento es ' + miArrayNumerico[indiceUltimoElemento])
+        
+        for(var i=0; i<miArrayNumerico.length; i++) {
+            console.log('El elemento ' + i + ' del array es ' + miArrayNumerico[i])
+        }
+        /* ------------------------------------------------------------------------ */
+        //array homogéneo de strings
+        var diasSemana = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado']
+        var numDia = new Date().getDay()
+        console.log(diasSemana, numDia)
+        console.log('Hoy es ' + diasSemana[numDia])
+
+        /* ------------------------------------------------------------------------ */
+        //array heterogéneo (combinado)
+        var nombre = 0
+        var apellido = 1
+        var edad = 3
+
+        var arrayPersona = ['Juan','Perez',true,23,'23456789']
+        console.log(arrayPersona)
+
+        //acceso a los elementos del array por sus índices
+        console.log(
+            'La persona se llama ' + arrayPersona[nombre] + ' ' + arrayPersona[apellido] + 
+            ' y tiene ' + arrayPersona[edad] + ' años.'
+        )
+
+
+        //variable del tipo object
+        console.log('\n/* variable del tipo object */')
+
+        var objetoPersona = {apellido: 'Perez', curso: true, edad: 23, dni: '23456789', nombre: 'Juan'}
+        console.log(objetoPersona)
+
+        //acceso a las propiedades del objeto por sus claves mediante la "notación corchete"
+        console.log(
+            'La persona se llama ' + objetoPersona['nombre'] + ' ' + objetoPersona['apellido'] + 
+            ' y tiene ' + objetoPersona['edad'] + ' años.'
+        )
+
+        //acceso a las propiedades del objeto por sus claves mediante la "notación punto"
+        console.log(
+            'La persona se llama ' + objetoPersona.nombre + ' ' + objetoPersona.apellido + 
+            ' y tiene ' + objetoPersona.edad + ' años.'
+        )
+
+
+        //-------------------------------------------------------
+        //                  ARRAY DE OBJETOS
+        //-------------------------------------------------------
+        console.log('\n/* Estructura: Array de Objetos */')
+
+        var alumnos = [
+            {nombre: 'Juan',    apellido: 'Gomez',      edad: 23,   curso: true,    foto: ''},
+            {nombre: 'Ana',     apellido: 'Mei',        edad: 24,   curso: false,   foto: ''},
+            {nombre: 'María',   apellido: 'Picos',      edad: 22,   curso: false,   foto: ''},
+            {nombre: 'José',    apellido: 'Gonzalez',   edad: 29,   curso: true,    foto: ''}
+        ]
+        console.log(alumnos)
+
+        console.log('/* recorrido con ciclo for */')
+        for(var alumno=0; alumno<alumnos.length; alumno++) {
+            //usando la notación punto
+            /* console.log(
+                'El alumno se llama ' + alumnos[alumno].nombre + ' ' + alumnos[alumno].apellido + '. ' +
+                '¿Hizo el curso de ingreso? ' + (alumnos[alumno].curso? 'SI':'NO')
+            ) */
+            //usando la notación corchete
+            console.log(
+                'El alumno se llama ' + alumnos[alumno]['nombre'] + ' ' + alumnos[alumno]['apellido'] + '. ' +
+                '¿Hizo el curso de ingreso? ' + (alumnos[alumno]['curso']? 'SI':'NO')
+            )
+        }
+
+        console.log('/* recorrido con ciclo for of */')
+        for(var alumno of alumnos) {
+            //console.log(alumno)
+            console.log(
+                'El alumno se llama ' + alumno.nombre + ' ' + alumno.apellido + '. ' +
+                '¿Hizo el curso de ingreso? ' + (alumno.curso? 'SI':'NO')
+            )
+        }
+
+        console.log('/* recorrido con ciclo forEach */')
+        alumnos.forEach(function(alumno){
+            console.log(
+                'El alumno se llama ' + alumno.nombre + ' ' + alumno.apellido + '. ' +
+                '¿Hizo el curso de ingreso? ' + (alumno.curso? 'SI':'NO')
+            )
+        })
+
+        console.log('/* recuperar el segundo alumno */')
+        console.log(
+            'El alumno se llama ' + alumnos[1].nombre + ' ' + alumnos[1].apellido + '. ' +
+            '¿Hizo el curso de ingreso? ' + (alumnos[1].curso? 'SI':'NO')
+        )
+
+
+        //-------------------------------------------------------
+        //                  OBJETO DE OBJETOS
+        //-------------------------------------------------------
+        console.log('\n/* Estructura: Objeto de Objetos */')
+
+        var alumnos2 = {
+            'persona 1': {nombre: 'Juan',    apellido: 'Gomez',      edad: 23,   curso: true,    foto: ''},
+            'persona 2': {nombre: 'Ana',     apellido: 'Mei',        edad: 24,   curso: false,   foto: ''},
+            'persona 3': {nombre: 'María',   apellido: 'Picos',      edad: 22,   curso: false,   foto: ''},
+            'persona 4': {nombre: 'José',    apellido: 'Gonzalez',   edad: 29,   curso: true,    foto: ''}
+        }
+        console.log(alumnos2)
+
+        console.log('/* recorrido con ciclo for in */')
+        for(var clave in alumnos2) {
+            //console.log(clave)
+            var alumno = alumnos2[clave]
+            //console.log(alumno)
+            console.log(
+                'El alumno se llama ' + alumno.nombre + ' ' + alumno.apellido + '. ' +
+                '¿Hizo el curso de ingreso? ' + (alumno.curso? 'SI':'NO')
+            )
+        }
+
+        console.log('/* recuperar el segundo alumno */')
+        console.log(
+            'El alumno se llama ' + alumnos2['persona 2'].nombre + ' ' + alumnos2['persona 2'].apellido + '. ' +
+            '¿Hizo el curso de ingreso? ' + (alumnos2['persona 2'].curso? 'SI':'NO')
+        )
+
+
+    </script>
+
+</body>
+</html>

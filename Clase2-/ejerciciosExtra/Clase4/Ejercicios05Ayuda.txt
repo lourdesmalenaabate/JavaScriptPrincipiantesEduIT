@@ -1,0 +1,98 @@
+1) El sistema debe preguntarle 10 veces al usuario:
+- nombre del caballo
+- pista: (A o B)
+- tiempo que le tomo a ese caballo terminar la carrera
+
+Al finalizar la entrada de datos para cada caballo el sistema debe imprimir:
+* caballo que salio primero para la pista A
+* caballo que salio ultimo para la pista A
+* caballo que salio primero para la pista B
+* caballo que salio ultimo para la pista B
+
+Ayuda: Lo primero que vemos es que le tenemos que preguntar al usuario una cantidad fija de veces
+esto indica que hay un Para.
+Dentro del Para irian las preguntas al usuario (Leer)
+Y luego habria condicionales para comparar cada dato ingresado y guardarlo en caso que sea
+necesario en las variables de resultado
+Suponemos que el usuario no se equivoca al ingresar la pista es decir ingresa
+A / a o B / b
+
+2) El sistema le debe preguntar al usuario una cantidad de veces indeterminada lo siguiente:
+ a) genero del bebe (varon/Varon o mujer/Mujer)
+ b) peso del bebe en kilogramos (ojo que el peso puede ser un valor con coma)
+ c) Si quiere continuar ingresando mas datos de bebes o no (S / s o N / n)
+
+El sistema al finalizar debe escribir lo siguiente:
+
+El menor peso en general es
+El mayor peso en general es
+El menor peso entre los varones es
+El mayor peso entre los varones es
+El menor peso entre las mujeres es
+El mayor peso entre las mujeres es
+
+Ayuda: En este caso la cantidad de veces que se le pregunta al usuario es indeterminada y
+se decide seguir o no si el usuario quiere continuar ingresando bebes por lo tanto eso
+indica que hay un "Repetir hasta que"
+
+Luego dentro del repetir irian las preguntas (genero del bebe, peso del bebe y si quiere continuar)
+
+A medida que el usuario vaya respondiendo tenemos que ir actualizando nuestras variables de
+resultado solamente si se da que el valor ingresado debe actualizar algunas de las variables
+de resultado
+
+Al finalizar lo unico que hay que hacer es imprimir las variables de resultado
+
+
+3) El sistema le debe preguntar al usuario una cantidad indeterminada de veces lo siguiente
+
+ a) El precio unitario del producto
+ b) la cantidad de producto de este tipo comprados
+ c) Si desea ingresar otro producto, ingrese s
+
+ Luego de que el usuario termine de ingresar los productos (haya ingresado "s") le debe preguntar si desea aplicar un descuento y aplicarlo en caso de que el usuario responda afirmativamente
+ En ese momento el sistema debe mostrar el valor total de la compra con el descuento aplicado (en cayo que haya respondido afirmativamente en el paso anterior)
+ Luego el sistema del debe preguntar al usuario si desea hacer el pago en cuotas
+ Si el usuario responde afirmativamente entonces el sistema le debe preguntar cuantas cuotas aplicar
+ Si el usuario responde una cantidad de cuotas invalida el sistema debe indicarlo y terminar (tambien se podria hacer que pregunte nuevamente)
+ Si el usuario responde una cantidad de cuotas validas el sistema debe imprimir:
+   - El pago en xxx  cuotas es de $ xxx por mes
+
+ 
+ 
+4) El sistema le debe preguntar al usuario una cantidad de veces indeterminada lo siguiente:
+  - Ingrese el tamaño de la lampara: grande, mediana o pequeña
+  - Ingrese el tipo de luz de la lampara: calida o fria
+  - Si quiere seguir ingresando lamparas (S / s)
+  
+  - Luego segun lo ingresado debe ir contabilizando las lamparas de cada tipo
+  Al finalizar debe imprimir:
+
+  El total de lamparas grandes es xxx" , totalGrandes;
+  El total de lamparas medianas es xxx" , totalMedianas;
+  El total de lamparas pequeñas es xxx" , totalPequenias;
+  La cantidad de lamparas grandes de luz calida es xxx"
+  La cantidad de lamparas medianas de luz calida es xxx"
+  La cantidad de lamparas pequeñas de luz calida es xxx"
+  La cantidad de lamparas grandes de luz fria es xxx"
+  La cantidad de lamparas medianas de luz fria es xxx"
+  La cantidad de lamparas pequeñas de luz fria es xxx"
+
+
+5) El sistema le debe preguntar al usuario una cantidad de veces indeterminada lo siguiente:
+ - Ingrese la marca del auto: ford o fiat"
+ - Ingrese la gama del auto: alta, media o baja"
+ - Ingrese el precio que el cliente pago por el auto"
+ - Si quiere seguir ingresando autos (S / s)
+
+Al finalizar el programa debe imprimir
+
+El total de impuestos a pagar por autos de gama alta es xxx"
+El total de impuestos a pagar por autos de gama media es xxx"
+El total de impuestos a pagar por autos de gama baja es xxx"
+La cantidad de autos Ford de gama alta es xxx"
+La cantidad de autos Ford de gama media es xxx"
+La cantidad de autos Ford de gama baja es xxx"
+La cantidad de autos Fiat de gama alta es xxx"
+La cantidad de autos Fiat de gama media es xxx"
+La cantidad de autos Fiat de gama baja es xxx"
